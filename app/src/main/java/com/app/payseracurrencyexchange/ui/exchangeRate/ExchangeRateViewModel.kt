@@ -139,7 +139,7 @@ class ExchangeRateViewModel(private val exchangeRatesRepository: ExchangeRatesRe
         }
     }
 
-    fun updateMinus(key : String, balance : Long){
+    fun updateMinus(key : String, balance : Double){
         viewModelScope.launch {
             roomRepository.updateMinus(key, balance)
         }

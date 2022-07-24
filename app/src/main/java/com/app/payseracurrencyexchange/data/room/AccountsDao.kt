@@ -31,7 +31,7 @@ interface AccountsDao {
         suspend fun updateSum(key : String, addValue: Long)
 
         @Query("UPDATE account_table SET accountBalance = accountBalance - :addValue WHERE accountName =:key")
-        suspend fun updateMinus(key : String, addValue: Long)
+        suspend fun updateMinus(key : String, addValue: Double)
 
         @Query("SELECT * FROM account_table WHERE accountName = :key")
         fun getAccountById(key: String?): LiveData<AccountsEntity>

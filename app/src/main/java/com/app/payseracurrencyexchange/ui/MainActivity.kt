@@ -102,6 +102,7 @@ class MainActivity : AppCompatActivity() {
                     if (p0.toString().isNotEmpty()) {
                         val format: NumberFormat = NumberFormat.getInstance()
                         val amount: Double = format.parse(p0.toString()).toDouble()
+                        //set input Amount in viewModel
                         viewModel.amount.set(amount)
                         binding.submitButton.isEnabled = viewModel.validate()
                     } else {
@@ -110,9 +111,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             })
-
             edAmount.addTextChangedListener(textWatcher)
-            edAmount.requestFocus()
 
             /**
              * Listener for selecting sellCurrency [AutoCompleteTextView] drop down items
@@ -157,6 +156,7 @@ class MainActivity : AppCompatActivity() {
              * Submit button for amount conversion, only enable if conditions met.
              */
             submitButton.setOnClickListener(View.OnClickListener {
+
                 viewModel.commision.set(
                     if (sharedPref.getInt(getString(R.string.number_of_conversion), 0) > 5) {
                         viewModel.amount.get() * (0.7 / 100)
@@ -209,7 +209,7 @@ class MainActivity : AppCompatActivity() {
          lifecycleScope.launch {
                 viewModel.checkKey(it.query.to).cancellable().collect {checkStatus->
                     if (checkStatus == 1) {
-                        viewModel.updateMinus(it.query.from, if(viewModel.balance.get()) 0 else viewModel.amount.get().toLong()+viewModel.commision.get().toLong())
+                        viewModel.updateMinus(it.query.from, if(viewModel.balance.get()) 0.0 else viewModel.amount.get().toLong()+viewModel.commision.get())
                         viewModel.updateSum(it.query.to, if(viewModel.balance.get()) 0  else it.result.toLong())
                         Snackbar.make(
                             binding.root,

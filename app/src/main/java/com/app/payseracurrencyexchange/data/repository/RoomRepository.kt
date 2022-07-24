@@ -40,7 +40,7 @@ import kotlinx.coroutines.withContext
             accountsDao.updateSum(key, balance)
         }
 
-        suspend fun updateMinus(key : String, balance : Long) {
+        suspend fun updateMinus(key : String, balance : Double) {
             accountsDao.updateMinus(key, balance)
         }
     }
