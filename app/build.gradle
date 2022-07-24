@@ -22,7 +22,7 @@ android {
 
         debug {
             buildConfigField "String", "BASE_URL", "\"https://api.apilayer.com/exchangerates_data/\""
-            buildConfigField "String", "API_KEY", "\"5o4Xj3RN1TYRIuhUxAiYc3eO4vpbYNtu\""
+            buildConfigField "String", "API_KEY", "\"yr4qQV8VPgLF0qi1rGSOtSnx5II24DSt\""
         }
         release {
             minifyEnabled false

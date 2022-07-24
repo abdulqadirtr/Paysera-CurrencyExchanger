@@ -164,6 +164,7 @@ class MainActivity : AppCompatActivity() {
                         0.0
                     }
                 )
+                viewModel.balance.set(false)
                 //using viewModel call convertAmount service
                 viewModel.getConvertAmount(
                     viewModel.toCurrency.get(),
@@ -208,8 +209,8 @@ class MainActivity : AppCompatActivity() {
          lifecycleScope.launch {
                 viewModel.checkKey(it.query.to).cancellable().collect {checkStatus->
                     if (checkStatus == 1) {
-                        viewModel.updateMinus(it.query.from, viewModel.amount.get().toLong()+viewModel.commision.get().toLong())
-                        viewModel.updateSum(it.query.to, it.result.toLong())
+                        viewModel.updateMinus(it.query.from, if(viewModel.balance.get()) 0 else viewModel.amount.get().toLong()+viewModel.commision.get().toLong())
+                        viewModel.updateSum(it.query.to, if(viewModel.balance.get()) 0  else it.result.toLong())
                         Snackbar.make(
                             binding.root,
                             it.result.toString() + " amount added to your account " + it.query.to,
@@ -307,7 +308,7 @@ class MainActivity : AppCompatActivity() {
                             var formattedMesaage =
                                 getString(R.string.message_account_created, selectedAccount)
                             viewModel.getAll()
-
+                            viewModel.balance.set(true)
                             //dialog.window.decorView
                             showSnakbar( dialog.window!!.decorView, formattedMesaage)
                         } else {

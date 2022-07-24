@@ -1,6 +1,7 @@
 package com.app.payseracurrencyexchange.ui.exchangeRate
 
 import android.app.Application
+import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableDouble
 import androidx.databinding.ObservableField
 import androidx.databinding.ObservableLong
@@ -52,6 +53,7 @@ class ExchangeRateViewModel(private val exchangeRatesRepository: ExchangeRatesRe
     val toCurrency = ObservableField("")
     val fromCurrency = ObservableField("")
     val commision = ObservableDouble(0.0)
+    var balance = ObservableBoolean(false)
 
    // var checkKey : Int = 0
     private val _checkKey = MutableLiveData<Int>()
