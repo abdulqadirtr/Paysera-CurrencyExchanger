@@ -18,7 +18,7 @@ CardView
 Coroutines
 ViewModel
 DataBinding
-Binding Adapter
+BindingAdapter
 LiveData
 RoomDatabase
 ErrorHandling
