@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="fill_parent"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="2dp"
+        app:contentPadding="10dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/space_large"
+            android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_close"
+            android:layout_gravity="end"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_medium"
+                android:layout_marginRight="@dimen/space_medium"
+                android:layout_marginTop="@dimen/space_xlarge"
+                style="@style/LargeTextAppearance"
+                android:text="Select the Currency to Open an Account"
+                android:layout_gravity="start"
+                android:textSize="15dp"
+                tools:ignore="HardcodedText,RtlHardcoded,SpUsage"></TextView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/space_large"
+                android:background="@color/black"
+                android:layout_height="1dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tvSellInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_large"
+                android:layout_marginEnd="10dp"
+                android:hint="List of Currencies"
+                app:layout_constraintBottom_toBottomOf="@+id/customTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/customTextView">
+
+                <AutoCompleteTextView
+                    android:id="@+id/sellAutoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    tools:text="EUR" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:padding="@dimen/space_medium"
+                android:gravity="center"
+                android:text="Done"
+                android:enabled="false"
+                android:background="@drawable/bg_button_primary"
+                android:textSize="16dp"
+                tools:ignore="HardcodedText,RtlHardcoded,SpUsage"></Button>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

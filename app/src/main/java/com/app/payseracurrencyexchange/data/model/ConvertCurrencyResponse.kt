@@ -1,5 +1,8 @@
 package com.app.payseracurrencyexchange.data.model
 
+/**
+ * dataclass for convert currency response.
+ */
 data class ConvertCurrencyResponse(
     val success: Boolean,
     val query: Query,

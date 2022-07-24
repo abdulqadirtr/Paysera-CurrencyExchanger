@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Paysera Currency Exchange</string>
+
+    <string name="tv_balance">My Balances</string>
+    <string name="tv_currency_exchange">CURRENCY EXCHANGE</string>
+    <string name="button_text">Submit</string>
+    <string name="tv_dialog_message">You have converted %1$s to %2$s  \n Commission fee %3$s.</string>
+    <string name="user_account_balance">accountBalance</string>
+    <string name="number_of_conversion">conversionCounter</string>
+    <string name="message_account_exist"> %1$s currency account already exist.</string>
+    <string name="message_account_created"> %1$s account successfully added.</string>
+    <string name="tv_add_balance">+ %1$s </string>
+    <string name="tv_dialog_title">Currency Converter</string>
 </resources>

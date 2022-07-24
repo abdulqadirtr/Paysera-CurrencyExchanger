@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="no_space">0dp</dimen>
+    <dimen name="space_xsmall">@dimen/_2sdp</dimen>
+    <dimen name="space_small">@dimen/_4sdp</dimen>
+    <dimen name="space_medium">@dimen/_8sdp</dimen>
+    <dimen name="space_normal">@dimen/_12sdp</dimen>
+    <dimen name="space_xnormal">@dimen/_14sdp</dimen>
+    <dimen name="space_large">@dimen/_16sdp</dimen>
+    <dimen name="space_xlarge">@dimen/_24sdp</dimen>
+    <dimen name="space_xxlarge">@dimen/_32sdp</dimen>
+    <dimen name="space_xxxlarge">@dimen/_64sdp</dimen>
+
+    <!--for text size-->
+    <dimen name="text_small">@dimen/_14ssp</dimen>
+    <dimen name="text_normal">@dimen/_16ssp</dimen>
+    <dimen name="text_medium">@dimen/_18ssp</dimen>
+</resources>
